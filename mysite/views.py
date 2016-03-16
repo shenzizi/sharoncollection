@@ -6,3 +6,21 @@ import json
 
 def sharoncollection(request):
     return render_to_response("index.html")
+
+def datavisualv2(request):
+    return render_to_response("datavisual.html")
+    
+def dvviewing(request):
+    return render_to_response("viewing.html")
+
+def dvothers(request):
+    return render_to_response("viewing_others.html")
+
+def dvall(request):
+    return render_to_response("viewing_all.html")
+
+def dvhotword(request):
+    return render_to_response("hotword.html")
+
+def datavisual(request):
+    return render_to_response("home.html")
