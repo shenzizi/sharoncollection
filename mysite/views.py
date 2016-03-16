@@ -8,7 +8,7 @@ def sharoncollection(request):
     return render_to_response("index.html")
 
 def datavisualv2(request):
-    return render_to_response("datavisual.html")
+    return render_to_response("datavisualv2.html")
     
 def dvviewing(request):
     return render_to_response("viewing.html")

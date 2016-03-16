@@ -1,95 +1,6 @@
+{% extends 'base.html' %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Data Visual</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="{% static 'dist/css/AdminLTE.min.css' %}">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="{% static 'dist/css/skins/_all-skins.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/nicgirault/circosJS/master/dist/colorBrewer.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'cssv2/datavisual.css' %}">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body class="hold-transition skin-blue sidebar-mini">
-    <div class="wrapper">
-
-      <header class="main-header">
-        <!-- Logo -->
-        <a href="datavisualv2" class="logo">
-          <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>D</b>V</span>
-          <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg" style="font-size:20px">Data<b>Visual</b></span>
-        </a>
-        <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top" role="navigation">
-          <!-- Sidebar toggle button-->
-           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Toggle navigation</span>
-          </a>
-        </nav>
-      </header>
-      <!-- Left side column. contains the logo and sidebar -->
-      <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-          <!-- sidebar menu: : style can be found in sidebar.less -->
-          <ul class="sidebar-menu">
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-eye"></i>
-                <span style="font-size:17px">收視率</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="dvviewing"><i class="fa fa-circle-o text-red"></i> 紅政論</a></li>
-                <li><a href="dvothers"><i class="fa fa-circle-o text-yellow "></i> 政論番外</a></li>
-                <li><a href="dvall"><i class="fa fa-circle-o text-aqua"></i> 夯節目</a></li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="dvhotword">
-                <i class="glyphicon glyphicon-fire"></i><span style="font-size:17px">熱門關鍵字</span>
-                <!--<i class="fa fa-angle-left pull-right"></i>-->
-              </a>
-          </ul>
-        </section>
-        <!-- /.sidebar -->
-      </aside>
-
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <!--<section class="content-header">
-          <h1>
-            Dashboard
-            <small>Control panel</small>
-          </h1>
-          <!--<ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Dashboard</li>
-          </ol>-->
-        <!--</section>-->
-        <!-- Main content -->
-        <section class="content">
-          <!-- Small boxes (Stat box) -->
+{% block main_content %}
           <div class="row">
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
@@ -144,67 +55,22 @@
               </div>
             </section>
           </div>
-      </section>
-      </div>
-     <footer class="main-footer">
-        <!--<div class="pull-right hidden-xs">
-          <b>Version</b> 2.3.0
-        </div>-->
-        <strong>Copyright &copy; 2015-2016.</strong> All rights reserved.
-      </footer>
-    </div><!-- ./wrapper -->
-
-    <!-- jQuery 2.1.4 -->
-    <!--<script src="{% static 'plugins/jQuery/jQuery-2.1.4.min.js' %}"></script>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <script>
-      $.widget.bridge('uibutton', $.ui.button);
-    </script>
-    <!-- Bootstrap 3.3.5 -->
-    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-    <!-- AdminLTE App -->
-    <script src="{% static 'dist/js/app.min.js' %}"></script>
-    <!--script for plotting-->
+{% endblock main_content %}
+{% block extra_js %}    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.14/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.8.0/d3-legend.js"></script>
     <script src="https://cdn.rawgit.com/nicgirault/circosJS/master/dist/circosJS.js" type="text/javascript"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="http://code.highcharts.com/highcharts-more.js"></script>
     <script src="https://code.highcharts.com/modules/broken-axis.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
-    <!--<script src="dist/js/demo.js"></script>-->
     <script src="{% static 'jsv2/datavisual.js' %}" type="text/javascript"></script>
-    <script src="{% static 'jsv2/dv_response.js' %}"></script>
-    <script src="{% static 'jsv2/dv_canvas.js' %}"></script>
     <script src="{% static 'jsv2/dv_data.js' %}" type="text/javascript"></script>
     <script src="{% static 'jsv2/dv_plots_charts.js' %}" type="text/javascript"></script>
     <script>
-      $.widget.bridge('uibutton', $.ui.button);
        $(function(){ 
-         /*$( window ).resize(function() {
-           layout();
-         });    
-         layout();*/
          scrolling();
-         /*circlegenerator();      
-         circleAnimation();*/
-         //legend();//d3 legend,use library to make legend
-         //viewingbubble(hardcode_viewingbubble_json_onemonth, 
-         //hardcode_viewingbubble_jsonvalue_onemonth);//d3,get data from data.js(hardcode_viewingbubble_json;hardcode_viewingbubble_jsonvalue )
-         //barlinechart01(hardcode_pie_barline_data_onemonth);//d3,get data from data.js(hardcode_pie_barline_data)  
-         //piechart(hardcode_pie_barline_data_onemonth);//default(data.js;hardcode_pie_barline_data)
-         //barchartwn(hardcode_bardata_onemonth);//default(data.js;hardcode_bardata)
          circosjs();//d3_circosjs,get data from data.js(hardcode_layout_data,hardcode_viewing,hardcode_cpm)
          highchart_barline(); //highchart_barline,get data from data.js(hardcode_viewing,hardcode_cpm,var arr=barlinechart();)
-         //highchart_bubble();//bubblecharts,get data from sample.json  
-         //viewing_clickbutton();
-
       });
     </script>
-  </body>
-</html>
+{% endblock extra_js %}
