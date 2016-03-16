@@ -1,0 +1,136 @@
+{
+  "basics": {
+    "name": "Zih-Yu Shen",
+    "label": "Programmer",
+    "picture": "",
+    "email": "esperanzayaya22@gmail.com",
+    "website": "http://52.88.116.24:8001/sharoncollection",
+    "summary": "With a strong passion for web design and development, Iwant to work as a front-end web developer where I can apply my skills to build a simple, user-friendly, easy-to-maintain website while constantly learning and improving.",
+    "location": {
+      "city": "Taipei",
+      "contry": "Taiwan"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "shenzizi",
+        "url": "https://github.com/shenzizi"
+      },
+      {
+        "network": "Linkin",
+        "username": "shenzizi",
+        "url":"aaa"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "National Taiwan University",
+      "position": "Research assistant",
+      "website": "http://blplab.linguistics.ntu.edu.tw/",
+      "startDate": "2014-09-01",
+      "endDate": "2016-02-29",
+      "summary": "attend SNL conference in Chicago,U.S.",
+      "highlights": [
+        "SNL",
+        "research analysis"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "CoderDojo",
+      "position": "Teacher",
+      "website": "http://coderdojo.com/",
+      "startDate": "2012-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Global movement of free coding clubs for young people.",
+      "highlights": [
+        "Awarded 'Teacher of the Month'"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "National Taiwan University",
+      "area": "Linguistics,Brain and Language Lab",
+      "studyType": "Master",
+      "startDate": "2011-09-01",
+      "endDate": "2014-08-30",
+      "gpa": "GPA: 4.0",
+      "courses": [
+        "Statistics",
+        "CLCD conference,oral presentation", 
+        "Language and Linguistics journel(link)", 
+        "poster"
+      ]
+    },
+    {
+      "institution": "National Taiwan University",
+      "area": "Chinese Literature",
+      "studyType": "Bachelor",
+      "startDate": "2007-09-01",
+      "endDate": "2011-06-30",
+      "gpa": "GPA :4.0",
+      "courses": [
+        "Book prize",
+        "paper presentation", 
+        "design the poster for school"
+      ]
+    }
+  ],
+  "Online course and Meetup": [
+    {
+      "name": "Web Development, Intro to HTML and CSS, JavaScript Basis, Object-Oriented JavaScript, Intro to jQuery, Data Visualization and D3.js",
+      "website": "Udacity",
+      "summary": "self taught"
+    }, 
+    {
+      "meetup":"Innovatist﹣build innovative products; React.js; HTML5"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Web Development",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "Javascript", 
+        "jQuery", 
+        "Bootstrap", 
+        "React.js", 
+        "D3.js;Canvas;Hightcharts;SVG", 
+        "RWD"
+      ]
+    },
+    {
+      "name": "Others",
+      "keywords": [
+        "Django,Node.js", 
+        "Github,Bitbucket", 
+        "Photoimpack;Inkscape"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Learning,Reading",
+      "keywords": [
+        "Drawing",
+        "Detective fiction"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Erlich Bachman",
+      "reference": "It is my pleasure to recommend Richard, his performance working as a consultant for Main St. Company proved that he will be a valuable addition to any company."
+    }
+  ]
+}
