@@ -68,9 +68,10 @@
             </li>
             <li class="treeview">
               <a href="projecthotword">
-                <i class="glyphicon glyphicon-fire"></i><span style="font-size:17px"> 熱門關鍵字</span>
+                <i class="glyphicon glyphicon-fire"></i><span style="font-size:17px">熱門關鍵字</span>
               </a>
           </ul>
+          <a href="#" id="backhomepage"><i class="glyphicon glyphicon-circle-arrow-left"></i>GO BACK TO THE HOME PAGE</a>
         </section>
         <!-- /.sidebar -->
       </aside>
@@ -90,6 +91,7 @@
 
     <!-- jQuery 3.0.0 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -131,6 +133,19 @@
       });
     </script>-->
    
+    
+    <script>
+      $("#backhomepage").click(function(e){
+        //alert("hi")
+        e.preventDefault();
+        var go = $.cookie("flag")
+        if (go == "visited"){
+           window.location = "/sharoncollection/testing"
+        }else{
+           window.location = "/sharoncollection"
+        }
+      }); 
+     </script>
     {% block extra_js %}
     {% endblock extra_js %}
   </body>
