@@ -4,247 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Sharon's collection</title>
-<style>
-body{
-	margin:0;
-}
-#snowbg{
-	position: absolute;
-	z-index: -2;
-	opacity:.1;
-}
-.container{
-	position:absolute;
-}
-.container3{
-	position: absolute;
-	top:0;
-	left:0;
-	border:1px solid red;
-}
-/* container--ph, svg--responsive for IE */
-.container--ph { 
-  position: relative;
-  width: 60%;
-  height: 0;
-  margin: 0 auto;
-  padding-top: 48%;
-  border:1px solid green;
- 
-}
-.svg--responsive {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-#word {
-  position: relative; 
-  z-index:1;
-  color:black;
-  /*font: 700 normal 4em/1.5 'Montserrat',sans-serif;*/
-  font-size:45px;
-  /*text-shadow: 1px 2px #288ce3, 2px 4px #288ce3, 3px 6px #288ce3, 4px 8px #288ce3, 5px 10px #288ce3, 6px 12px #288ce3, 7px 14px #288ce3, 8px 16px #288ce3, 9px 18px #288ce3, 10px 20px #288ce3;*/
-  text-shadow: 5px 5px 10px gray;
-  width:350px;
-  word-wrap: break-word;
-
-}
-line { 
-	stroke: black; 
-	stroke-width: .06; 
-}
-#snowflake,#snowflake2,#snowflake3 {
-  height: 150px;
-  width: 150px;
-  display: none;
-  position: absolute;
-  -webkit-animation: snowflake 5s linear, spin 5s linear;
-  -moz-animation: snowflake 5s linear, spin 5s linear;
-  -ms-animation: snowflake 5s linear, spin 5s linear;
-  animation: snowflake 5s linear, spin 5s linear;
-  z-index: 2;
-}
-#snowflake2{
-  -webkit-animation: snowflake 5s linear, spin 5s linear;
-  -moz-animation: snowflake 5s linear, spin 5s linear;
-  -ms-animation: snowflake 5s linear, spin 5s linear;
-  animation: snowflake 5s linear, spin 5s linear;
-  z-index: 2;
-}
-#snowflake3{
-  -webkit-animation: snowflake2 5s linear, spin 5s linear;
-  -moz-animation: snowflake2 5s linear, spin 5s linear;
-  -ms-animation: snowflake2 5s linear, spin 5s linear;
-  animation: snowflake2 5s linear, spin 5s linear;
-  z-index: 2;
-}
-@keyframes snowflake {
-    0%   {top: 0px; opacity:0;}
-    25%  {top: 300px;opacity:0.5;}
-    75%  {top: 450;opacity:1;}
-    100% {top: 350px;opacity:0.8;}
-}
-@-moz-keyframes snowflake {
-     0%  {top: 0px; opacity:0;}
-    25%  {top: 300px;opacity:0.5;}
-    75%  {top: 450;opacity:1;}
-    100% {top: 350px;opacity:0.8;}
-}
-@-webkit-keyframes snowflake {
-    0%   {top: 0px; opacity:0;}
-    25%  {top: 300px;opacity:0.5;}
-    75%  {top: 450;opacity:1;}
-    100% {top: 350px;opacity:0.8;}
-}
-@-ms-keyframes snowflake {
-    0%   {top: 0px; opacity:0;}
-    25%  {top: 300px;opacity:0.5;}
-    75%  {top: 450;opacity:1;}
-    100% {top: 350px;opacity:0.8;}
-}
-@keyframes snowflake2 {
-    0%   {top: -100px; opacity:0;}
-    25%  {top: -120px;opacity:0.5;}
-    75%  {top: -200px;opacity:1;}
-    100% {top: -50px;opacity:0.8;}
-}
-@-moz-keyframes snowflake2 {
-    0%   {top: -100px; opacity:0;}
-    25%  {top: -120px;opacity:0.5;}
-    75%  {top: -200px;opacity:1;}
-    100% {top: -50px;opacity:0.8;}
-}
-@-webkit-keyframes snowflake2 {
-    0%   {top: -100px; opacity:0;}
-    25%  {top: -120px;opacity:0.5;}
-    75%  {top: -200px;opacity:1;}
-    100% {top: -50px;opacity:0.8;}
-}
-@-ms-keyframes snowflake2 {
-    0%   {top: -100px; opacity:0;}
-    25%  {top: -120px;opacity:0.5;}
-    75%  {top: -200px;opacity:1;}
-    100% {top: -50px;opacity:0.8;}
-}
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }	
-@keyframes fadein {
-     0%  {opacity:0;}
-    90%  {opacity:0.1;}
-    100% {opacity:1;}
-}
-
-/* Firefox < 16 */
-@-moz-keyframes fadein {
-    0%   {opacity:0;}
-    90%  {opacity:0.1;}
-    100% {opacity:1;}
-}
-
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
-    0%   {opacity:0;}
-    90%  {opacity:0.1;}
-    100% {opacity:1;}
-}
-
-/* Internet Explorer */
-@-ms-keyframes fadein {
-     0%  {opacity:0;}
-    90%  {opacity:0.1;}
-    100% {opacity:1;}
-}
-
-/* Opera < 12.1 */
-@-o-keyframes fadein {
-     0%  {opacity:0;}
-    75%  {opacity:0.2;}
-    100% {opacity:1;}
-}	
-.a,
-.b,
-.c {
-  width: 56px; /*112px*/
-  height: 3px; /*6px*/
-  background-color: lightblue;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -3px;
-  margin-left: -56px;
-}
-
-.b {
-  transform: rotate(60deg);
-}
-
-.c {
-  transform: rotate(-60deg);
-}
-
-.lu,
-.ru,
-.lo,
-.ro {
-  height: 3px; /*6px*/
-  width: 11px; /*22px*/
-  background-color: lightblue;
-}
-
-.lu {
-  margin-top: 4.5px; /*9px*/
-  margin-left: 2.5px; /*5px*/
-  background-color: lightblue;
-  transform: rotate(-60deg);
-}
-
-.ru {
-  margin-top: -12px; /*-24px*/
-  margin-left: 2.5px;/*5px*/
-  background-color: lightblue;
-  transform: rotate(60deg);
-}
-
-.lo {
-  margin-top: -3px; /*-6px*/	
-  margin-left: 42.5px; /*85px*/
-  background-color: lightblue;
-  transform: rotate(-60deg);
-}
-
-.ro {
-  margin-top: 6px; /*12px*/
-  margin-left: 42.5px;/*85px*/
-  background-color: lightblue;
-  transform: rotate(60deg);
-}
-#project1,#project2,#resume{
-	position: absolute;	
-	font-size: 30px;
-	z-index: 3
-	/*top:550px;*/	
-}
-#project1{
-	-webkit-animation: fadein 1s;
-    -moz-animation: fadein 1s;
-    -ms-animation: fadein 1s;
-    animation: fadein 1s;
-}
-#project2{
-	-webkit-animation: fadein 2s;
-    -moz-animation: fadein 2s;
-    -ms-animation: fadein 2s;
-    animation: fadein 2s;
-}
-#resume{
-	-webkit-animation: fadein 3s;
-    -moz-animation: fadein 3s;
-    -ms-animation: fadein 3s;
-    animation: fadein 3s;
-}
-
-</style>
+   <link rel="stylesheet" href="{% static 'cssv2/style.css' %}">    
 </head>
 <body>
 <img src="#" id="snowbg">
@@ -252,9 +12,9 @@ line {
 	  <div id="word" style="border:1px solid green"></div>
 </div>
 <div class="container2">
-      <div id="project1" style="border:1px solid orange">Project1</div>
+    <div id="project1" style="border:1px solid orange"><a href="project">Project1</a></div>
 	  <div id="project2">Project2</div>
-	  <div id="resume">My resume</div>
+	  <div id="resume"><a href="resume">Resume</a></div>
 </div>
 <div class="container--ph">
 <svg xmlns="http://www.w3.org/2000/svg" 
@@ -278,69 +38,12 @@ line {
 </svg>
 </div>
 <div class="container3">
-	<div id='snowflake'>
-		<div class='a'>
-			<div class='lu'></div>
-			<div class='ru'></div>
-			<div class='lo'></div>
-			<div class='ro'></div>
-		</div>
-		<div class='b'>
-			<div class='lu'></div>
-			<div class='ru'></div>
-			<div class='lo'></div>
-			<div class='ro'></div>
-		</div>
-		<div class='c'>
-			<div class='lu'></div>
-			<div class='ru'></div>
-			<div class='lo'></div>
-			<div class='ro'></div>
-		</div>
-	</div>
-	<div id='snowflake2'>
-		<div class='a'>
-			<div class='lu'></div>
-			<div class='ru'></div>
-			<div class='lo'></div>
-			<div class='ro'></div>
-		</div>
-		<div class='b'>
-			<div class='lu'></div>
-			<div class='ru'></div>
-			<div class='lo'></div>
-			<div class='ro'></div>
-		</div>
-		<div class='c'>
-			<div class='lu'></div>
-			<div class='ru'></div>
-			<div class='lo'></div>
-			<div class='ro'></div>
-		</div>
-	</div>
-	<div id='snowflake3'>
-		<div class='a'>
-			<div class='lu'></div>
-			<div class='ru'></div>
-			<div class='lo'></div>
-			<div class='ro'></div>
-		</div>
-		<div class='b'>
-			<div class='lu'></div>
-			<div class='ru'></div>
-			<div class='lo'></div>
-			<div class='ro'></div>
-		</div>
-		<div class='c'>
-			<div class='lu'></div>
-			<div class='ru'></div>
-			<div class='lo'></div>
-			<div class='ro'></div>
-		</div>
-	</div>
+	<div id='snowflake'>❄</div>
+	<div id='snowflake2'>❄</div>
+	<div id='snowflake3'>❄</div>
+  <div id='transition_snowflake'>❄</div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
-
 <script>
 
 function layout(){
@@ -355,7 +58,8 @@ function layout(){
 	    p2width = $("#project2").width(),
 	    rwidth = $("#resume").width(),
 	    p1height = $("#project1").height(),
-	    p2height = $("#project2").height();
+	    p2height = $("#project2").height(),
+      snowwidth= $("#snowflake").width(); 
 	   
 	    
 	    // background image setting, width & height==full version
@@ -375,19 +79,19 @@ function layout(){
 	    containerposition_h = svgcontainerheight*3.2/4;
 	    $(".container").css("margin-left", containerposition_w);
 	    $(".container").css("margin-top",containerposition_h);
-	    $("#project1").css("margin-left", (screenwidth-svgcontainerwidth)/2+svgcontainerwidth/4-p1width/2);
+	    $("#project1").css("margin-left", (screenwidth-svgcontainerwidth)/2+svgcontainerwidth/4+snowwidth/2-p1width);
 	    $("#project1").css("margin-top",svgcontainerheight*3/8-p1height); 
-	    $("#project2").css("margin-left", (screenwidth-svgcontainerwidth)/2+svgcontainerwidth*3/4-p2width/2); 
+	    $("#project2").css("margin-left", (screenwidth-svgcontainerwidth)/2+svgcontainerwidth*3/4+snowwidth/2-p2width); 
 	    $("#project2").css("margin-top",svgcontainerheight*3/8-p2height); 
-	    $("#resume").css("margin-left", (screenwidth-svgcontainerwidth)/2+svgcontainerwidth/2-rwidth/2); 
-	    $("#resume").css("margin-top",svgcontainerheight*3.8/4); 
+	    $("#resume").css("margin-left", (screenwidth-svgcontainerwidth)/2+svgcontainerwidth/2+snowwidth/2-rwidth); 
+	    $("#resume").css("margin-top",svgcontainerheight*3.7/4); 
 	    //$("#snowflake,#snowflake3").css("margin-top",-300);
 	    //$("#snowflake2").css("margin-top",-150);
 	    $("#snowflake,#snowflake2").css("margin-top",svgcontainerheight*3/8-p1height*2.5); 
-	    $("#snowflake3").css("margin-top",svgcontainerheight*3.5/4);
-	    $("#snowflake").css("margin-left",(screenwidth-svgcontainerwidth)/2+svgcontainerwidth/4-p1width*1.35);
-	    $("#snowflake2").css("margin-left",(screenwidth-svgcontainerwidth)/2+svgcontainerwidth*3/4-p2width*1.35);
-	    $("#snowflake3").css("margin-left",(screenwidth-svgcontainerwidth)/2+svgcontainerwidth*3/4-rwidth*1.5);
+	    $("#snowflake3").css("margin-top",svgcontainerheight*3.2/4);
+	    $("#snowflake").css("margin-left",(screenwidth-svgcontainerwidth)/2+svgcontainerwidth/4-p1width);
+	    $("#snowflake2").css("margin-left",(screenwidth-svgcontainerwidth)/2+svgcontainerwidth*3/4-p2width);
+	    $("#snowflake3").css("margin-left",(screenwidth-svgcontainerwidth)/2+svgcontainerwidth*3/4-rwidth*3);
 
         
 
@@ -526,6 +230,7 @@ function type(){
       if (skip_count == 0) {
         if (forwards) {
           offset++;
+          //console.log(offset)
         }
         else {
           if (i==len-1){
@@ -536,8 +241,15 @@ function type(){
       }
     	$('#word').text(part);
 }; 
+ /*$('a').click(function(e) {
+   e.preventDefault();
+   newLocation = this.href;
+   $('body').fadeOut(300, newpage);
+   });
+  function newpage() {
+   window.location = newLocation;
+  }*/
 
-  
 $(function() {
    drawtree(15);
    drawtree(25);
