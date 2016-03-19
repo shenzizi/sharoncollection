@@ -13,7 +13,6 @@ body{
 	position: absolute;
 	top:0;
 	left:0;
-	border:1px solid red;
 }
 /* container--ph, svg--responsive for IE */
 .container--ph { 
@@ -22,8 +21,6 @@ body{
   height: 0;
   margin: 0 auto;
   padding-top: 48%;
-  border:1px solid green;
- 
 }
 .svg--responsive {
   position: absolute;
@@ -43,8 +40,9 @@ body{
 
 }
 line { 
-	stroke: black; 
+	stroke: gray; 
 	stroke-width: .06; 
+  opacity: 0.3;
 }
 #snowflake,#snowflake2,#snowflake3 {
   /*height: 150px;
@@ -158,8 +156,14 @@ line {
     100% {opacity:1;}
 }	
 
+#project1::before,#project2::before,#resume::before{
+  content:"❄";
+  font-size:50px;
+  color:lightblue;
+}
 #project1,#project2,#resume{
 	position: absolute;	
+  display: none;
 	font-size: 30px;
   font-weight: bold;
 	z-index: 3; 
@@ -171,10 +175,10 @@ line {
 	/*top:550px;*/	
 }
 #project1{
-	-webkit-animation: fadein 1s;
-    -moz-animation: fadein 1s;
-    -ms-animation: fadein 1s;
-    animation: fadein 1s;
+	-webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    -ms-animation: fadein 2s;
+    animation: fadein 2s;
 }
 #project2{
 	-webkit-animation: fadein 2s;
@@ -183,10 +187,10 @@ line {
     animation: fadein 2s;
 }
 #resume{
-	-webkit-animation: fadein 3s;
-    -moz-animation: fadein 3s;
-    -ms-animation: fadein 3s;
-    animation: fadein 3s;
+	-webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    -ms-animation: fadein 2s;
+    animation: fadein 2s;
 }
 
 @keyframes fadeout {
