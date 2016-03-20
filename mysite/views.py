@@ -20,5 +20,5 @@ def collection(request,name):
         return render_to_response("viewing_others.html")
     elif name == "projecthotword":
         return render_to_response("hotword.html")
-    elif name == "testing":
+    elif name == "staticmenu":
         return render_to_response("index_no_animation.html")

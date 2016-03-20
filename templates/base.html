@@ -135,12 +135,12 @@
    
     
     <script>
+    // use cookie to check if the mainmenu is visited or not, if visited already, then redirect to the html page without animation
       $("#backhomepage").click(function(e){
-        //alert("hi")
         e.preventDefault();
         var go = $.cookie("flag")
         if (go == "visited"){
-           window.location = "/sharoncollection/testing"
+           window.location = "/sharoncollection/staticmenu"
         }else{
            window.location = "/sharoncollection"
         }
