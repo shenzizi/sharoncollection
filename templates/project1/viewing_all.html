@@ -1,0 +1,79 @@
+{% extends 'project1/base.html' %}
+{% load staticfiles %}
+{% block main_content %}
+          <div class="row">
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-yellow">
+                <div class="inner">
+                  <h3>嫁妝<sup style="font-size: 20px"></sup></h3>
+                  <p>收視率之冠</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-ribbon-b"></i>
+                </div>
+                <!--<a href="viewing_all.html" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>-->
+              </div>
+            </div><!-- ./col -->
+          </div><!-- /.row -->
+          <!-- Main row -->    
+
+          <div class="jumbotron" style="background:lavender;"> 
+             <div class="page-header">
+              <h1 style="font-size:35px">夯節目</h1> 
+             </div>  
+              <p>回家後就打開電視機嗎?有沒有最夯節目的八卦?</p>
+              <p>要當個盡責的couch potato,先了解大家都沉浸在哪些節目裡</p>
+              <p>泡泡圖呈現節目聲量與收視率的關係,可發現有些節目收視率高,但很少人討論</p>
+              <p>而有些節目可說是人氣王,收視率高,大家在網路上也都熱切討論,如瑯琊榜</p>
+              <p>泡泡圖下方表格詳列收視率前20名的節目各項資訊,包含收視率,聲量,正負評筆數,及正負評百分比</p>
+          </div>
+
+         <div class="row">
+           <section class="col-lg-12 connectedSortable" >
+               <div class="box box-default animation-element slide-left">
+                  <div class="box-header" id="canvascontainer">
+                  <i class="fa fa-television"></i>
+                  <h3 class="box-title">
+                   節目收視率
+                  </h3>
+               </div>
+               <div id="bubblechart" style="min-width: 280px; height: 500px;"></div>
+           </div>
+         <div class="row">
+          <div class="col-md-12" id="viewingtable_col">
+             <table class="table table-striped viewingtable" style="min-width:280px;margin-top:30px">
+                <thead>
+                  <tr>
+                    <th id="table_rank">排名</th>
+                    <th id="table_channel">頻道</th>
+                    <th>節目名稱</th>
+                    <th>收視率(%)</th>
+                    <th>網路聲量(%)</th>
+                    <th>正評數</th>
+                    <th>負評數</th>
+                    <th>正評/負評</th>
+                  </tr>
+                </thead>
+              <tbody>
+              </tbody>
+             </table>
+          </div>
+        </div>
+       </section>
+      </div>
+{% endblock main_content %}
+{% block extra_js %}
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/broken-axis.js"></script>
+    <script src="{% static 'js/project1/datavisual.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/project1/dv_plots_charts.js' %}" type="text/javascript"></script>
+    <script>
+       $(function(){ 
+         scrolling();
+         highchart_bubble();//bubblecharts,get data from sample.json  
+         viewing_clickbutton();
+      });
+    </script>
+{% endblock extra_js %}

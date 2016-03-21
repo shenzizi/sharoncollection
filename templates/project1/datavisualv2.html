@@ -1,0 +1,247 @@
+{% extends 'project1/base.html' %}
+{% load staticfiles %}
+{% block main_content %}
+{% block extra_css %}
+{% endblock extra_css %}
+ <div class="row">
+            <div class="col-lg-3 col-xs-6">
+              <div class="small-box bg-red">
+                <div class="inner">
+                  <h3>新台灣加油</h3>
+                  <p>政論王</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-trophy"></i>
+                </div>
+                <a href="projectviewing" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div><!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-yellow">
+                <div class="inner">
+                  <h3>嫁妝<sup style="font-size: 20px"></sup></h3>
+                  <p>收視率之冠</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-ribbon-b"></i>
+                </div>
+                <a href="projectviewing_all" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div><!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-green">
+                <div class="inner">
+                  <h3>人民</h3>
+                  <p>最夯詞組</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-person-stalker"></i>
+                </div>
+                <a href="projecthotword" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div><!-- ./col -->
+          </div><!-- /.row -->
+          <!-- Main row -->
+        
+          <div class="panel panel-success animation-element slide-left">
+              <div class="panel-heading">請選擇日期</div>
+              <div class="panel-body">
+                  <div class="radio radio-info radio-inline">
+                  <input type="radio" id="oneweek" value="option1" name="radioInline" checked="">
+                  <label for="oneweek"> 過去一周 </label>
+                  </div>
+                  <div class="radio radio-info radio-inline">
+                      <input type="radio" id="onemonth" value="option1" name="radioInline">
+                      <label for="onemonth"> 過去一個月 </label>
+                  </div>
+                  <div class="radio radio-info radio-inline">
+                      <input type="radio" id="oneyear" value="option1" name="radioInline">
+                      <label for="oneyear"> 過去一年 </label>
+                  </div>
+                </div>
+          </div>
+          
+              
+
+          <div class="row">
+           <section class="col-lg-7 connectedSortable">
+              <div class="box box-success">
+                <div class="box-header">
+                  <i class="fa fa-eye"></i>
+                  <h3 class="box-title">潤利收視率</h3>
+                </div>
+                <div class="box-body">
+                  <div class="box-tools pull-left" data-toggle="tooltip" title="Status"></div>
+                  <div class="col-md-2 col-xs-12" id="legend"></div>
+                  <div class="col-md-6 col-xs-12" id="viewingbubble"></div>
+                </div>
+              </div>
+              <div class="box box-success">
+                <div class="box-header">
+                  <i class="fa fa-commenting"></i>
+                  <h3 class="box-title">聲量正負評筆數</h3>
+                </div>
+                <div class="box-body">
+                  <div id="nbar"></div>   
+                </div>
+              </div>
+            </section>
+          <!--</div>-->
+ 
+          <!--<div class="row">-->
+            <section class="col-lg-5 connectedSortable">
+              <div class="box box-success">
+                <div class="box-header">
+                  <i class="fa fa-money"></i>
+                  <h3 class="box-title">10秒廣告價與C.P.M</h3>
+                </div>
+                <div class="box-body">
+                  <div id="barlinechart01"></div>
+                </div>
+              </div>
+            <!--</section>-->
+
+            <!--<section class="col-lg-4 connectedSortable">-->
+              <div class="box box-success">
+                <div class="box-header">
+                  <i class="fa fa-bullhorn"></i>
+                  <h3 class="box-title">聲量(%)</h3>
+                </div>
+                <div class="box-body">
+                  <div id="piechart"></div>
+                </div>
+              </div>
+            </section>
+
+            <!--<section class="col-lg-4 connectedSortable">
+              
+            </section-->
+        </div>
+        
+         <div class="row">
+            <section class="col-lg-12 connectedSortable animation-element slide-right">
+              <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs pull-right">
+                  <li class="active"><a href="#heatmap" data-toggle="tab">Heatup</a></li>
+                  <li><a  id="barcharttab" href="#highchart_barline" data-toggle="tab">Barchart</a></li>
+                  <li class="pull-left header"><i class="fa fa-eye"></i>政論收視率</li>
+                </ul>
+                <div class="tab-content no-padding">
+                 <div class="chart tab-pane active" id="heatmap">
+                    <!--<div class="col-md-4 col-xs-12">-->
+                       <div class="col-md-2 col-xs-6">          
+                         <div id="heatmaplegend"></div>
+                        </div>
+                        <div class="col-md-2 col-xs-6">  
+                         <div id="heatmaplegend01"></div>
+                        </div>
+                    <!--</div>-->
+                   <div class="col-md-8 col-xs-12">          
+                      <svg id="chart"></svg>
+                   </div>
+                  </div>
+                 <!--<div class="chart tab-pane">-->
+                   <div class="chart tab-pane" id="highchart_barline"></div> 
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="panel panel-info animation-element slide-left">
+              <div class="panel-heading">請選擇排名</div>
+              <div class="panel-body">
+                  <div class="radio radio-info radio-inline">
+                  <input type="radio" id="top10" value="option1" name="radioInline" checked="">
+                  <label for="top10"> TOP10 </label>
+                  </div>
+                  <div class="radio radio-info radio-inline">
+                      <input type="radio" id="top15" value="option1" name="radioInline">
+                      <label for="top15"> TOP15 </label>
+                  </div>
+                  <div class="radio radio-info radio-inline">
+                      <input type="radio" id="top20" value="option1" name="radioInline">
+                      <label for="top20"> TOP20 </label>
+                  </div>
+                  <div class="radio radio-info radio-inline">
+                      <input type="radio" id="top28" value="option1" name="radioInline">
+                      <label for="top28"> TOP28 </label>
+                  </div>
+                </div>
+          </div>
+          <div class="row">
+             <section class="col-lg-12 connectedSortable" >
+               <div class="box box-primary animation-element slide-right">
+                  <div class="box-header" id="canvascontainer">
+                  <i class="glyphicon glyphicon-fire"></i>
+                  <h3 class="box-title">
+                   熱門關鍵字
+                  </h3>
+                    </div>
+                      <canvas id='canvas' width='1000px' height='600px' style="margin-left:10px"></canvas>
+                </div>
+          </section>
+         </div>
+         <div class="row">
+           <section class="col-lg-12 connectedSortable" >
+               <div class="box box-default animation-element slide-left">
+                  <div class="box-header" id="canvascontainer">
+                  <i class="fa fa-television"></i>
+                  <h3 class="box-title">
+                   節目收視率
+                  </h3>
+               </div>
+               <div id="bubblechart" style="min-width: 280px; height: 500px;"></div>
+           </div>
+         <div class="row">
+          <div class="col-md-12" id="viewingtable_col">
+             <table class="table table-striped viewingtable" style="min-width:280px;margin-top:30px">
+                <thead>
+                  <tr>
+                    <th id="table_rank">排名</th>
+                    <th id="table_channel">頻道</th>
+                    <th>節目名稱</th>
+                    <th>收視率(%)</th>
+                    <th>網路聲量(%)</th>
+                    <th>正評數</th>
+                    <th>負評數</th>
+                    <th>正評/負評</th>
+                  </tr>
+                </thead>
+              <tbody>
+              </tbody>
+             </table>
+          </div>
+        </div>
+      </section>
+      </div>
+{% endblock main_content %}
+{% block extra_js %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.14/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.8.0/d3-legend.js"></script>
+    <script src="https://cdn.rawgit.com/nicgirault/circosJS/master/dist/circosJS.js" type="text/javascript"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/broken-axis.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="{% static 'js/project1/datavisual.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/project1/dv_response.js' %}"></script>
+    <script src="{% static 'js/project1/dv_canvas.js' %}"></script>
+    <script src="{% static 'js/project1/dv_data.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/project1/dv_plots_charts.js' %}" type="text/javascript"></script>
+    <script>
+       $(function(){ 
+         scrolling();
+         legend();//d3 legend,use library to make legend
+         viewingbubble(hardcode_viewingbubble_json_onemonth, 
+         hardcode_viewingbubble_jsonvalue_onemonth);//d3,get data from data.js(hardcode_viewingbubble_json;hardcode_viewingbubble_jsonvalue )
+         barlinechart01(hardcode_pie_barline_data_onemonth);//d3,get data from data.js(hardcode_pie_barline_data)  
+         piechart(hardcode_pie_barline_data_onemonth);//default(data.js;hardcode_pie_barline_data)
+         barchartwn(hardcode_bardata_onemonth);//default(data.js;hardcode_bardata)
+         circosjs();//d3_circosjs,get data from data.js(hardcode_layout_data,hardcode_viewing,hardcode_cpm)
+         highchart_barline(); //highchart_barline,get data from data.js(hardcode_viewing,hardcode_cpm,var arr=barlinechart();)
+         highchart_bubble();//bubblecharts,get data from sample.json  
+         viewing_clickbutton();
+      });
+    </script>
+{% endblock extra_js %}

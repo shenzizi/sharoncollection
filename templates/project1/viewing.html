@@ -1,0 +1,119 @@
+{% extends 'project1/base.html' %}
+{% load staticfiles %}
+{% block main_content %}
+          <div class="row">
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-red">
+                <div class="inner">
+                  <h3>新台灣加油</h3>
+                  <p>政論王</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-trophy"></i>
+                </div>
+                <!--<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>-->
+              </div>
+            </div><!-- ./col -->
+          </div><!-- /.row -->
+          <!-- Main row -->
+          
+          <div class="jumbotron" style="background:lavender;"> 
+             <div class="page-header">
+              <h1 style="font-size:35px">紅政論</h1> 
+              </div>  
+              <p>想知道現在最夯的政論節目是哪些嗎?</p>
+              <p>快來看看政論聲量多大,廣告價衝多高</p>
+              <p>請點選日期,一覽過去一周,一個月,一年榮登收視率前120名的政論節目</p>
+              <p>收視率,10秒廣告價,C.P.M從潤利公司網站蒐集得來,聲量百分筆與聲量正負評筆數從搜尋引擎得來</p>
+              <p><a a target="_blank" href="http://www1.xkm.com.tw/HTML/tw/hr/ht_top.asp">資料來源</a></p>
+          </div>
+
+          <div class="panel panel-success animation-element slide-left">
+              <div class="panel-heading">請選擇日期</div>
+              <div class="panel-body">
+                  <div class="radio radio-info radio-inline">
+                  <input type="radio" id="oneweek" value="option1" name="radioInline" checked="">
+                  <label for="oneweek"> 過去一周 </label>
+                  </div>
+                  <div class="radio radio-info radio-inline">
+                      <input type="radio" id="onemonth" value="option1" name="radioInline">
+                      <label for="onemonth"> 過去一個月 </label>
+                  </div>
+                  <div class="radio radio-info radio-inline">
+                      <input type="radio" id="oneyear" value="option1" name="radioInline">
+                      <label for="oneyear"> 過去一年 </label>
+                  </div>
+                </div>
+          </div>          
+
+          <div class="row">
+           <section class="col-lg-7 connectedSortable">
+              <div class="box box-success">
+                <div class="box-header">
+                  <i class="fa fa-eye"></i>
+                  <h3 class="box-title">潤利收視率</h3>
+                </div>
+                <div class="box-body">
+                  <div class="box-tools pull-left" data-toggle="tooltip" title="Status"></div>
+                  <div class="col-md-2 col-xs-12" id="legend"></div>
+                  <div class="col-md-6 col-xs-12" id="viewingbubble"></div>
+                </div>
+              </div>
+              <div class="box box-success">
+                <div class="box-header">
+                  <i class="fa fa-commenting"></i>
+                  <h3 class="box-title">聲量正負評筆數</h3>
+                </div>
+                <div class="box-body">
+                  <div id="nbar"></div>   
+                </div>
+              </div>
+            </section>
+          <!--</div>-->
+ 
+          <!--<div class="row">-->
+            <section class="col-lg-5 connectedSortable">
+              <div class="box box-success">
+                <div class="box-header">
+                  <i class="fa fa-money"></i>
+                  <h3 class="box-title">10秒廣告價與C.P.M</h3>
+                </div>
+                <div class="box-body">
+                  <div id="barlinechart01"></div>
+                </div>
+              </div>
+            <!--</section>-->
+
+            <!--<section class="col-lg-4 connectedSortable">-->
+              <div class="box box-success">
+                <div class="box-header">
+                  <i class="fa fa-bullhorn"></i>
+                  <h3 class="box-title">聲量(%)</h3>
+                </div>
+                <div class="box-body">
+                  <div id="piechart"></div>
+                </div>
+              </div>
+            </section>
+          </div>
+{% endblock main_content %}
+{% block extra_js %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.14/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.8.0/d3-legend.js"></script>
+    <script src="{% static 'js/project1/datavisual.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/project1/dv_data.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/project1/dv_plots_charts.js' %}" type="text/javascript"></script>
+    <script>
+       $(function(){ 
+         scrolling();
+         legend();//d3 legend,use library to make legend
+         viewingbubble(hardcode_viewingbubble_json_onemonth, 
+         hardcode_viewingbubble_jsonvalue_onemonth);//d3,get data from data.js(hardcode_viewingbubble_json;hardcode_viewingbubble_jsonvalue )
+         barlinechart01(hardcode_pie_barline_data_onemonth);//d3,get data from data.js(hardcode_pie_barline_data)  
+         piechart(hardcode_pie_barline_data_onemonth);//default(data.js;hardcode_pie_barline_data)
+         barchartwn(hardcode_bardata_onemonth);//default(data.js;hardcode_bardata) 
+         viewing_clickbutton();
+      });
+    </script>
+{% endblock extra_js %}
