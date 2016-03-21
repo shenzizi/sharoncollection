@@ -1,0 +1,240 @@
+  body{
+    font-family: Georgia, Times, 'Times New Roman', serif; 
+  }
+  h1{
+    color:white;
+    font-weight: bold;
+  }
+  h2{
+    color:white;
+  }
+  h3{
+    text-align: left;
+    font-size:1.5em;
+    color:white;
+  }
+  p{
+    font-size: 18px;
+  }
+  .container-fluid{
+      padding-left: 15px; padding-right: 15px; margin-left: 0; margin-right: 0;
+    }
+    .container-fluid > .row{
+      padding-left: 0px; padding-right: 0px; margin-left: 0; margin-right: 0;
+    }
+  #bg{
+      position: absolute;
+      z-index: 1;
+      margin-left:-15px;
+    }
+  #circleAnimation,#narrative,#narrative_text{
+      position: absolute;
+      z-index: 2;
+    }
+  #narrative{
+    left:500px;
+    top:500px;  
+  }
+  #narrative >h2{
+     color:pink ;
+  }
+  #narrative_text{
+    top:80px;
+    font-size: 25px;
+    color:honeydew;
+  }
+  #part1,#part3{
+    background-color: black;
+    padding:0px;
+  }
+  #part2,#part4{
+    background-color: lavender;
+    padding:0px;
+  }
+  #part2{
+    padding:0;
+  }
+  #part2,#part3,#part4{
+    margin-top: 65px;
+  }
+  #part3 > .row > .intro{
+   background-color:indigo;
+  }
+  #part2 > .row > .intro{
+   background-color:#3c6a72;
+  }  
+  #part4 > .row > .intro{
+   background-color:darkkhaki;
+  }  
+  #part1 >.row >.intro::before,#part3 >.row >.intro::before{
+    display: block;
+    content: "";
+    width: 5%;
+    height: 5px;
+    content: url('../../img/project2/circledec.png');
+    margin-left:45%;
+    margin-top:-135px;
+  }
+  #part2 >.row >.intro::before,#part4 >.row >.intro::before{
+    display: block;
+    content: "";
+    width: 5%;
+    height: 5px;
+    content: url('../../img/project2/recdec.png');
+    margin-left:45%;
+    margin-top:-135px;
+  }
+  .paddingfordec{
+    padding-top: 100px;
+  }
+  .paddingfordec > p{
+    color:white;
+  }
+  /* charts setting*/
+  #bubblechart{
+      margin-top:100px;
+  }
+  .arc text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+  }
+ .arc path {
+  stroke: #fff;
+ }
+.negative{
+    fill:grey !important;
+    opacity:.3;
+  }
+.axis text {
+  font: 10px sans-serif;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke:white;
+  shape-rendering: crispEdges;
+}
+.axis {
+  diaplay:;
+  font: 10px sans-serif;
+}
+.label{
+  font-size:1em;
+}
+ .tooltip {   
+    position: absolute;           
+    text-align: center;           
+    width: 70px;                  
+    height: 40px;                 
+    padding: 2px;             
+    font: 12px sans-serif;        
+    background: lightsteelblue;   
+    border: 0px;      
+    border-radius: 8px;           
+    pointer-events: none; 
+    z-index: 100;        
+  } 
+  text{
+    font-weight: bold;
+  }
+/*end of charts setting*/
+
+/*scrolling animation setting*/
+.animation-element.slide-left {
+  opacity: 0;
+  -moz-transition: all 500ms linear;
+  -webkit-transition: all 500ms linear;
+  -o-transition: all 500ms linear;
+  transition: all 500ms linear;
+  -moz-transform: translate3d(-100px, 0px, 0px);
+  -webkit-transform: translate3d(-100px, 0px, 0px);
+  -o-transform: translate(-100px, 0px);
+  -ms-transform: translate(-100px, 0px);
+  transform: translate3d(-100px, 0px, 0px);
+  }
+ .animation-element.slide-left.in-view {
+  opacity: 1;
+  -moz-transform: translate3d(0px, 0px, 0px);
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  -o-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
+}
+.intro{
+  padding-top: 100px;
+  padding-left:5%;
+  padding-bottom: 2%;
+}
+.topb{
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+/*navigation bar*/
+.navbar-fixed-top{
+  height:70px;
+}
+.navbar-brand,.nav li{
+  font-size: 20px;
+  padding-top: 5px;
+}
+.navbar-brand{
+  padding-top: 20px;
+  font-weight: bolder;
+  color:white;
+  font-size:25px;
+}
+/* date picker button setting*/
+#datebutton{
+  margin-left: 10%;
+  margin-top:10%;
+}
+.choosedate{
+  padding:10px;
+  margin-left:10%;
+}
+#footer{
+    background-color: grey;
+    height:200px;
+  }
+
+/* mobile device*/
+@media (max-width: 768px) {
+  h3{
+    text-align: left;
+    font-size:1.5em;
+    color:white;
+  }
+  h2{
+    color:white;
+    font-size: 18px; 
+  }
+  h1{
+    color:white;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  p{
+    font-size: 15px;
+  }
+  #highchart-barline{
+    margin-top:20px;  
+  }
+  #part1 >.row >.intro::before,#part3 >.row >.intro::before{
+    margin-left: 33%;
+  }
+  #part2 >.row >.intro::before,#part4 >.row >.intro::before{
+    margin-left: 33%;
+  }
+  #narrative,#narrative-text{
+    display: none;
+  }
+}
+@media (max-width:340px){
+  #viewingtable_col{
+    width:280px;
+  }
+  #table_rank,#table_channel{
+   display:none; 
+ } 
+}
