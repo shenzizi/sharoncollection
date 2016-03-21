@@ -9,16 +9,18 @@ def home(request):
 
 def collection(request,name):
     if name == "resume":
-        return render_to_response("sharonresume.html")
-    elif name == "project":
-        return render_to_response("datavisualv2.html")
+        return render_to_response("resume/sharonresume.html")
+    elif name == "project1":
+        return render_to_response("project1/datavisualv2.html")
     elif name == "projectviewing":
-        return render_to_response("viewing.html")
+        return render_to_response("project1/viewing.html")
     elif name == "projectviewing_all":
-        return render_to_response("viewing_all.html")
+        return render_to_response("project1/viewing_all.html")
     elif name == "projectviewing_others":
-        return render_to_response("viewing_others.html")
+        return render_to_response("project1/viewing_others.html")
     elif name == "projecthotword":
-        return render_to_response("hotword.html")
+        return render_to_response("project1/hotword.html")
     elif name == "staticmenu":
         return render_to_response("index_no_animation.html")
+    elif name == "project2":
+        return render_to_response("project2/home.html")
