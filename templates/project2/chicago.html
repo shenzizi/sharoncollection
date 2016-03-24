@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Travel to Chicago</title>
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<style>
+    body{
+       font-family: 'Lobster', cursive;;
+    }
+    #fixednav{
+    	width: 75%;
+        position: fixed;
+        left: 50%;
+        margin-left: -37.5%;
+        margin-top:20px;
+    	height:40px;
+    	border:1px solid orange;
+        z-index: 100;
+    }
+    .nav{
+    	position: relative;
+    	display: inline-block;
+    	color:green;
+    	font-size:20px;
+        margin-left: 5%;
+        margin-right:5%; 
+        z-index: 2;
+    }
+    .nav a{
+        color:#400817;
+    }
+    #logo{
+        position: fixed;
+        width:120px;
+        height:auto;
+        margin-top:-100px; 
+        margin-left:-150px;
+    }
+    #formargin{
+    	border:1px solid yellow;
+    	margin-left: 25%;
+    	margin-right:25%;
+    	width:50%;
+        margin-top: -100px;
+    }
+	#cover,#attractions,#food,#traffic,#thoughts,#cover{
+		margin-left:20px;
+		margin-right: 20px;
+		margin-top:20px;
+		margin-bottom: 20px;
+         
+	}
+    #food,#thoughts{
+    	background-color: #0b3c55; 
+        /*text-align: center;*/
+    }
+    #cover{
+        content:url("traveltochicago4.png");
+        float:center;
+    }
+    #attractions,#traffic{
+    	background-color: #d7dbde; 
+
+    }
+    hr { 
+      height: 30px; 
+      border-style: solid; 
+      border-color: #8c8b8b; 
+      border-width: 1px 0 0 0; 
+      border-radius: 20px; 
+      margin-top: 50px;
+    } 
+    hr:before { 
+      display: block; 
+      content: ""; 
+      height: 30px; 
+      margin-top: -31px; 
+      border-style: solid; 
+      border-color: #8c8b8b; 
+      border-width: 0 0 1px 0; 
+      border-radius: 20px; 
+    }
+    h1{
+        color:#F1E6F8;
+        padding-top:8%;
+        text-align: center;
+    }
+    .next{
+     color:white;
+     font-size: 50px;
+    }
+    .next:hover{
+     color:hotpink;
+    }
+    .container-fluid{
+        border:3px solid red;
+    }
+
+    /* carosel css setting */
+    .carousel-showmanymoveone .carousel-control {
+      width: 4%;
+      background-image: none;
+    }
+    .carousel-showmanymoveone .carousel-control.left {
+      margin-left: 15px;
+    }
+    .carousel-showmanymoveone .carousel-control.right {
+      margin-right: 15px;
+    }
+    .carousel-showmanymoveone .cloneditem-1,
+    .carousel-showmanymoveone .cloneditem-2,
+    .carousel-showmanymoveone .cloneditem-3 {
+      display: none;
+    }
+    @media all and (min-width: 768px) {
+      .carousel-showmanymoveone .carousel-inner > .active.left,
+      .carousel-showmanymoveone .carousel-inner > .prev {
+        left: -50%;/*50%*/
+      }
+      .carousel-showmanymoveone .carousel-inner > .active.right,
+      .carousel-showmanymoveone .carousel-inner > .next {
+        left: 50%;
+      }
+      .carousel-showmanymoveone .carousel-inner > .left,
+      .carousel-showmanymoveone .carousel-inner > .prev.right,
+      .carousel-showmanymoveone .carousel-inner > .active {
+        left: 0;
+      }
+      .carousel-showmanymoveone .carousel-inner .cloneditem-1 {
+        display: block;
+      }
+    }
+    @media all and (min-width: 768px) and (transform-3d), all and (min-width: 768px) and (-webkit-transform-3d) {
+      .carousel-showmanymoveone .carousel-inner > .item.active.right,
+      .carousel-showmanymoveone .carousel-inner > .item.next {
+        -webkit-transform: translate3d(50%, 0, 0); /*50%*/
+                transform: translate3d(50%, 0, 0);
+        left: 0;
+      }
+      .carousel-showmanymoveone .carousel-inner > .item.active.left,
+      .carousel-showmanymoveone .carousel-inner > .item.prev {
+        -webkit-transform: translate3d(-50%, 0, 0);
+                transform: translate3d(-50%, 0, 0);
+        left: 0;
+      }
+      .carousel-showmanymoveone .carousel-inner > .item.left,
+      .carousel-showmanymoveone .carousel-inner > .item.prev.right,
+      .carousel-showmanymoveone .carousel-inner > .item.active {
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+        left: 0;
+      }
+    }
+    @media all and (min-width: 992px) {
+      .carousel-showmanymoveone .carousel-inner > .active.left,
+      .carousel-showmanymoveone .carousel-inner > .prev {
+        /*left: -25%;*/
+        left:-33%;
+      }
+      .carousel-showmanymoveone .carousel-inner > .active.right,
+      .carousel-showmanymoveone .carousel-inner > .next {
+        /*left: 25%;*/
+         left:33%;
+      }
+      .carousel-showmanymoveone .carousel-inner > .left,
+      .carousel-showmanymoveone .carousel-inner > .prev.right,
+      .carousel-showmanymoveone .carousel-inner > .active {
+        left: 0;
+      }
+      .carousel-showmanymoveone .carousel-inner .cloneditem-2,
+      .carousel-showmanymoveone .carousel-inner .cloneditem-3 {
+        display: block;
+      }
+    }
+    @media all and (min-width: 992px) and (transform-3d), all and (min-width: 992px) and (-webkit-transform-3d) {
+      .carousel-showmanymoveone .carousel-inner > .item.active.right,
+      .carousel-showmanymoveone .carousel-inner > .item.next {
+        -webkit-transform: translate3d(33.333%, 0, 0);/*25%*/
+                transform: translate3d(33.333%, 0, 0);
+        left: 0;
+      }
+      .carousel-showmanymoveone .carousel-inner > .item.active.left,
+      .carousel-showmanymoveone .carousel-inner > .item.prev {
+        -webkit-transform: translate3d(-33.333%, 0, 0);
+                transform: translate3d(-33.333%, 0, 0);
+        left: 0;
+      }
+      .carousel-showmanymoveone .carousel-inner > .item.left,
+      .carousel-showmanymoveone .carousel-inner > .item.prev.right,
+      .carousel-showmanymoveone .carousel-inner > .item.active {
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+        left: 0;
+      }
+    }
+    .container {
+      margin-bottom: 50px;
+    }
+    .nextcontainer{
+        text-align: center;
+    }
+    /*body {
+      font-family: 'Bitter', sans-serif;
+      color: #E54A41;
+      background-image: url('//static.rtpdesign.co.uk/blog/img/background.png');
+      background-repeat: no-repeat;
+      background-position: right top;
+      background-size: 20%;
+    }*/
+    /*p {
+      font-family: 'Open Sans', sans-serif;
+      color: #333;
+      margin-bottom: 2em;
+    }*/
+    h2 {
+      margin: 2em 0 1em;
+    }
+    .title {
+      padding: 28px;
+      display: table-cell;
+      position: relative;
+      vertical-align: middle;
+      text-align: center;
+    }
+    #p1,#p2,#p3{
+        display:none;
+    }
+    #intro{
+        color:white;
+        font-size: 15px;
+    }
+    /* end of carousel setting */
+    #dish{
+        position: absolute;
+        width:88%;
+        z-index: 1;
+    }
+    @media all and (min-width: 1700px) {
+        #dish{
+            width:75%;
+        }
+    }
+    .foodimgs{
+        position: absolute;
+        z-index: 2;
+    }
+    .foodintro{
+        display: none; 
+    }
+    #food1,#food2,#food3{
+        width:23%;
+        margin-left: 2%;
+        margin-top:40%;
+        opacity:.65;
+    }
+    #food4,#food5{
+        width:23%;
+        margin-left: 2%;
+        margin-top: 5%;
+        opacity:.65;
+    }
+    #food1:hover,#food2:hover,#food3:hover,#food4:hover,#food5:hover{
+      opacity:1;
+    }
+    #food1,#food4{
+        margin-left: 6%;
+    }
+    /* because the ohter div use position:absolute, its position is change, which is not like before(stay in the buttom of the section)*/
+    .foodnextcontainer{
+        text-align: center;
+    }
+    #foodnext{
+        margin-top: 40%;       
+    }
+
+    /*flying airplain for traffic section */
+    @keyframes fly{
+      40%{
+        top: 0;
+        transform: scale(0.6) rotate(5deg);
+        transform-origin: right;
+      }
+      60%{
+        top: 150px;
+        left: 370px;
+        transform: scale(0.6) rotate(35deg);
+      }
+      80%{
+        top:100px;
+        left:570px;
+        transform: scale(0.6) rotate(55deg);
+      }
+      100%{
+        top:50px;
+        left:700px;
+      }
+    }
+    #airplane{
+      position: absolute;
+      top: 50px;
+      left: -80px;
+      transform: scale(0.6) rotate(18deg);
+      animation: fly 3s ease-in-out;
+    }
+    #airplanediv{
+      position: relative;
+      width: 700px;
+      height: 100px;
+      /*margin: 10px auto;*/
+      margin-top: -5%;
+      border-bottom: 3px dashed white;
+    }
+    #airplanediv::before{
+      font-size: 1.2em;
+      color: white;
+      font-style: italic;
+      content: "Let's always start from LOOP!";
+    }
+    #airplanediv::after{
+      font-size: 1.2em;
+      color: white;
+      font-style: italic;
+      position: relative;
+      left: 400px;
+      content: "To anywhere";
+    }
+    /*end of flying airplain for traffic section */
+
+    /* airplane day 1*/
+    @keyframes flyday1{
+      40%{
+        top: 0;
+        transform: scale(0.6) rotate(5deg);
+        transform-origin: right;
+      }
+      60%{
+        top: 100px;
+        transform: scale(0.6) rotate(35deg);
+      }
+      80%{
+        top:150px;
+        transform: scale(0.6) rotate(55deg);
+      }
+      100%{
+        top:300px;
+      }
+    }
+    #airplaneday1{
+      position: absolute;
+      top: 0px;
+      left: 50px;
+      transform: scale(0.6) rotate(18deg);
+      animation: flyday1 3s ease-in-out;
+    }
+    #airplanediv_day1{
+      position: relative;
+      width: 400px;
+      height: 400px;
+      margin: 10px auto;
+      /*border-left: 3px dashed white;*/
+    }
+    #airplanediv_day1::before{
+      font-size: 1.2em;
+      color: white;
+      font-style: italic;
+    }
+    #airplanediv_day1::after{
+      font-size: 1.2em;
+      color: white;
+      font-style: italic;
+      position: relative;
+      top: 300px;
+    }
+    /* end of airplane day1 */
+
+    /* scrolling */
+    /*.animation-element.slide-left {
+      opacity: 0;
+      -moz-transition: all 500ms linear;
+      -webkit-transition: all 500ms linear;
+      -o-transition: all 500ms linear;
+      transition: all 500ms linear;
+      -moz-transform: translate3d(-100px, 0px, 0px);
+      -webkit-transform: translate3d(-100px, 0px, 0px);
+      -o-transform: translate(-100px, 0px);
+      -ms-transform: translate(-100px, 0px);
+      transform: translate3d(-100px, 0px, 0px);
+      }
+    .animation-element.slide-left.in-view {
+      opacity: 1;
+      -moz-transform: translate3d(0px, 0px, 0px);
+      -webkit-transform: translate3d(0px, 0px, 0px);
+      -o-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+      transform: translate3d(0px, 0px, 0px);
+    }*/
+    .animation-element.color {
+        color:red;
+    }
+    .animation-element.color.in-view{
+      color:yellow;
+    }
+
+    /*nav bar color change when scrolling */
+    .midnightHeader.default {
+      background: none;
+      color: black;
+    }
+    .midnightHeader.white {
+      background: red;
+      color: white;
+    }
+    .midnightHeader.blue {
+      background: blue;
+      color: white;
+    }
+    .fixed{
+        position:fixed;
+    }
+	</style>
+</head>
+<body>
+    
+    <!--<div id="fixednav">
+     <hr>
+     <img src="uiuc.png" id="logo">
+     <div id="formargin">       
+       <div class="nav" id="attractionsnav"><a href="#" class="animation-element">Attractions</a></div>
+       <div class="nav" id="foodnav"><a href="#">Food</a></div>
+       <div class="nav" id="trafficnav"><a href="#">Traffic</a></div>
+       <div class="nav" id="thoughtsnav"><a href="#">Thoughts</a></div>
+     </div>
+    </div>-->
+    <nav class="fixed">
+       <!-- Your standard header -->
+          <div class="logo" style="margin-left:50px;margin-right:20px">Logo</div>
+          <div class="logo2">LOGO2</div>
+    </nav>
+
+    <section id="cover">
+      <h1>Travel to Chicago</h1>
+      <!--<img src="traveltochicago3.png">-->
+      <div class="nextcontainer"><i class="fa fa-angle-down next" id="covernext"></i></div>
+    </section>
+
+	<section data-midnight="white" id="attractions">
+     <div class="container-fluid">
+       <div class="row">
+         <div class="col-lg-offset-3 col-lg-6" style="border:1px solid green">
+           <h1 class="animation-element color">Attractions</h1>
+         </div>
+        </div>
+        <div class="row">
+         <div class="col-md-12" style="width:80%;border:2px solid white;margin-left:10%;margin-right:10%">
+          <div class="carousel carousel-showmanymoveone slide" id="carousel123">
+            <ol class="carousel-indicators">
+              <li data-target="#carousel123" data-slide-to="1" class="active"></li>
+              <li data-target="#carousel123" data-slide-to="2"></li>
+              <li data-target="#carousel123" data-slide-to="3"></li>
+              <!--<li data-target="#carousel123" data-slide-to="3"></li>-->
+            </ol>
+            <div class="carousel-inner">
+              <div class="item active">
+                <div class="col-xs-12 col-sm-6 col-md-4"><a href="#"><img src="pic1.png" class="img-responsive" id="pic1"></a></div>
+              </div>
+              <div class="item">
+                <div class="col-xs-12 col-sm-6 col-md-4"><a href="#"><img src="pic2.png" class="img-responsive" id="pic2"></a></div>
+              </div>
+              <div class="item">
+                <div class="col-xs-12 col-sm-6 col-md-4"><a href="#"><img src="pic3.png" class="img-responsive" id="pic3"></a></div>
+              </div>          
+              <!--<div class="item">
+                <div class="col-xs-12 col-sm-6 col-md-4"><a href="#"><img src="http://placehold.it/500/002040/eeeeee&amp;text=4" class="img-responsive"></a></div>
+              </div>
+              <div class="item">
+                <div class="col-xs-12 col-sm-6 col-md-4"><a href="#"><img src="http://placehold.it/500/0054A6/fff/&amp;text=5" class="img-responsive"></a></div>
+              </div>
+              <div class="item">
+                <div class="col-xs-12 col-sm-6 col-md-4"><a href="#"><img src="http://placehold.it/500/002d5a/fff/&amp;text=6" class="img-responsive"></a></div>
+              </div>-->
+            </div>
+            <a class="left carousel-control controlbutton" href="#carousel123" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+            <a class="right carousel-control controlbutton" href="#carousel123" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+          </div>
+        </div>
+      </div> 
+      <div class="row">
+        <div class="col-md-12" style="border:1px solid orange">
+          <div id="intro">night</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 nextcontainer" style="border:1px solid orange">
+          <div><i class="fa fa-angle-down next" id="attractionsnext"></i></div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+	<section data-midnight="blue" id="food">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-offset-3 col-lg-6" style="border:1px solid green">
+            <h1>Food</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 dishcontainer" style="border:1px solid black">
+            <img src ="dish.png" id="dish" style="border:1px solid gray">
+            <div class="foodimgs" style="border:1px solid blue">
+               <div class="row">
+                 <div class="col-md-12" style="border:1px solid black">
+                  <img src="chicagoq.jpg" id="food1">
+                  <img src="alinea.jpg" id="food2">
+                  <img src="girlgoat.jpg" id="food3">
+                 </div>
+                </div>
+                <div class="row">
+                 <div class="col-md-12" style="border:1px solid purple">
+                  <img src="giordanospizza.jpg" id="food4">
+                  <img src="protillos.png" id="food5">
+                 </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-6" style="border:1px solid black">
+           <div class="foodinro">
+            <h3 class="foodtitle">food intro</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <img src="#" id="morefoodimg" style="border:1px solid brown">
+              </div>
+              <div class="col-md-6">
+                 <img src="#" id="morefoodimg" style="border:1px solid brown">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="foodtext" style="color:white;border:1px solid red">foodintro1foodintro2</div>
+              </div>
+            </div>          
+         </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 nextcontainer" style="border:1px solid green">
+            <i class="fa fa-angle-down next" id="foodnext"></i>
+          </div>
+        </div>
+     </div>
+    </section>
+	<section id="traffic">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-offset-3 col-lg-6" style="border:1px solid green">
+            <h1>Traffic</h1>
+            <div id="airplanediv">
+              <img src="http://evaferreira.com.ar/imgs/plane.png" alt="Plane from SCL to Sydney" id="airplane">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="daytraffic" id="daytraffic1" style="border:1px solid yellow">
+              <div class="trafficintro">
+                 <h3>Day 1</h3>
+                 <h4>Loop -- Millennium park(between Michigan Ave. & Columbus Ave)</h4>
+                 <p></p>
+                 <h4>Loop -- Wendella Boat(400 N Michigan Ave)</h4>
+                 <p></p>
+              </div>
+              
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="daytraffic" id="daytraffic2" style="border:1px solid yellow">
+              <div class="trafficintro">
+                <h3>Day 2</h3>
+                 <h4>Loop -- Oak park( 010 Lake Street)</h4>
+                 <p>Green Line:Adams/Wabash上車,Ridgeland下車</p>
+                 <h4>Loop -- Blue man show(3133 N. HALSTED)</h4>
+                 <p>Red Line:Jackson上車,Belmont下車</p>
+              </div>
+              <!--<img src="airplane.png" alt="Plane from SCL to Sydney" id="airplaneday2">-->
+             
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="daytraffic" id="daytraffic3" style="border:1px solid yellow">
+               <div class="trafficintro">
+               <h3>Day 3</h3>
+               <h4>Loop -- University of Chicago(5801 South Ellis Avenue)</h4>
+               <p>Green Line:Adams/Wabash上車,Garfield下車</p>
+               <p>55 Bus:Garfield Green Line Station上車,55th Street & Ellis下車</p>
+               <h4>Loop -- John Hancock Center(875 N Michigan Ave)</h4>
+               <p>Red Line:Jackson上車,Chicago下車</p>
+            </div>  
+            </div>
+          </div>
+        </div>
+         <div class="row">
+          <div class="col-md-12" style="border:1px solid green">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="airplane.png" alt="Plane from SCL to Sydney" id="airplaneday1">
+                <img src="day1.png" alt="day1" id="day1" style="width:80%;border:3px dashed blue">
+              </div>
+              <div class="col-md-4">
+                <img src="day2.png" alt="day2" id="day2" style="width:80%;border:3px dashed purple">
+              </div>
+              <div class="col-md-4"></div>
+            </div>
+          </div>
+        </div>
+         <div class="row">
+          <div class="col-md-12 nextcontainer" style="border:1px solid green">
+            <i class="fa fa-angle-down next" id="trafficnext"></i>
+          </div>
+       </div>
+      </div>
+    </section>
+	
+    <section id="thoughts">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-offset-3 col-lg-6" style="border:1px solid green">
+            <h1>Thoughts</h1>          
+          </div>
+        </div>
+         <div class="row">
+          <div class="col-lg-offset-5 col-lg-6" style="border:1px solid green">
+           <img src="cameragirl1.png" style="width:80%;margin-top:40%">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 nextcontainer" style="border:1px solid green">
+            <p style="color:white">TOP</p>
+          </div>
+       </div>
+      </div>
+    </section>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="midnight.jquery.min.js"></script>
+	<script>
+
+        // adjust the height of each section according to the height of screen
+        function layout(){
+		  var height=$(window).height();
+          var width = $(window).width();
+            $("#cover").css("width",width-40); 
+    		$("#attractions,#food,#traffic,#thoughts,#cover").css("height",height-40);
+            $('#covernext').click(function(e){ 
+              $('html, body').animate({scrollTop:$('#attractions').position().top}, 'slow');
+            });
+            $('#attractionsnext').click(function(e){ 
+              $('html, body').animate({scrollTop:$('#food').position().top}, 'slow');
+            });
+            $('#foodnext').click(function(e){ 
+              $('html, body').animate({scrollTop:$('#traffic').position().top}, 'slow');
+            });
+             $('#trafficnext').click(function(e){ 
+              $('html, body').animate({scrollTop:$('#thoughts').position().top}, 'slow');
+            });
+        };
+        
+        // image slider
+        (function(){
+          // setup your carousels as you normally would using JS
+          // or via data attributes according to the documentation
+          // http://getbootstrap.com/javascript/#carousel
+          $('#carousel123').carousel({ interval: false });
+        }());
+
+        (function(){
+          $('.carousel-showmanymoveone .item').each(function(){
+            var itemToClone = $(this);
+
+            for (var i=1;i<3;i++) {
+              itemToClone = itemToClone.next();
+
+              // wrap around if at end of item collection
+              if (!itemToClone.length) {
+                itemToClone = $(this).siblings(':first');
+              }
+
+              // grab item, clone, add marker class, add to collection
+              itemToClone.children(':first-child').clone()
+                .addClass("cloneditem-"+(i))
+                .appendTo($(this));
+            }
+          });
+        }());
+        
+        // image slide with changeable text
+         $(".controlbutton").on("click",function(){
+             var slideid= $(".carousel-indicators li.active").attr("data-slide-to"); 
+             console.log(slideid)
+             if(slideid == 1){
+                console.log(1)
+                /*$("#pic1").css("opacity",3); 
+                $("#pic2").css("opacity",.1); 
+                $("#pic3").css("opacity",.3);
+                $("#pic3").css("display","block")*/
+                $("#pic3").css("opacity",.3);
+                $("#intro").text("street");
+             }else if (slideid == 2){
+                console.log(2)
+                /*$("#pic2").css("opacity",3); 
+                $("#pic1").css("opacity",.3); 
+                $("#pic3").css("opacity",.1);
+                $("#pic1").css("display","block")*/
+                $("#pic1").css("opacity",.3);
+                $("#intro").text("oak");
+             }else if (slideid ==3){
+                 console.log(3)
+                /*$("#pic3").css("opacity",3); 
+                $("#pic1").css("opacity",.1); 
+                $("#pic2").css("opacity",.3);
+                $("#pic2").css("display","block")*/
+                $("#pic2").css("opacity",.3);
+                $("#intro").text("night");
+             }
+         });
+         $("#food1").mouseenter(function(){
+            //$("#morefoodimg").attr("src","chicagoq.jpg")
+            $(".foodtext").text("chicagoq");
+            $(".foodtitle").text("breakfast,chicagoq");
+         });
+         /*$("#food1").mouseleave(function(){
+            $("#morefoodimg").attr("src","#")
+         });*/
+         $("#food2").mouseover(function(){
+            //$("#morefoodimg").attr("src","alinea.jpg")
+            $(".foodtext").text("alinea");
+            $(".foodtitle").text("restaurant,alinea");
+         });
+
+         //scrolling
+         function scrolling(){
+           var $animation_elements = $('.animation-element');
+            var $window = $(window);
+
+            function check_if_in_view() {
+             var window_height = $window.height();
+             var window_top_position = $window.scrollTop();
+             var window_bottom_position = (window_top_position + window_height);
+         
+              $.each($animation_elements, function() {
+                var $element = $(this);
+                var element_height = $element.outerHeight();
+                var element_top_position = $element.offset().top;
+                var element_bottom_position = (element_top_position + element_height);
+
+            //check to see if this current container is within viewport
+              if ((element_bottom_position >= window_top_position) &&
+                (element_top_position <= window_bottom_position)) {
+                $element.addClass('in-view');
+              } else {
+               $element.removeClass('in-view');
+              }
+              });
+            }
+          $window.on('scroll resize', check_if_in_view);
+          $window.trigger('scroll');
+          }; 
+          
+          $(document).ready(function(){
+              // Change this to the correct selector for your nav.
+              $('nav.fixed').midnight();
+              scrolling();
+              layout();
+              $(window).resize( function(){ 
+                layout();
+              });    
+          });
+
+	</script>
+</body>
+</html>
